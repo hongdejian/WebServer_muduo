@@ -21,7 +21,7 @@ const int EPOLLWAIT_TIME = 10000;
 typedef shared_ptr<Channel> SP_Channel;
 
 Epoll::Epoll():
-    epollFd_(epoll_create1(EPOLL_CLOEXEC)),
+    epollFd_(epoll_create(EPOLL_CLOEXEC)),
     events_(EVENTSNUM)
 {
     assert(epollFd_ > 0);
