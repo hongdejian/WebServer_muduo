@@ -591,9 +591,6 @@ AnalysisState HttpData::analysisRequest()
 {
     if (method_ == METHOD_POST)
     {
-        // ------------------------------------------------------
-        // My CV stitching handler which requires OpenCV library
-        // ------------------------------------------------------
         // string header;
         // header += string("HTTP/1.1 200 OK\r\n");
         // if(headers_.find("Connection") != headers_.end() && headers_["Connection"] == "Keep-Alive")
@@ -640,7 +637,7 @@ AnalysisState HttpData::analysisRequest()
         {
             header += "Content-Type: image/png\r\n";
             header += "Content-Length: " + to_string(sizeof favicon) + "\r\n";
-            header += "Server: LinYa's Web Server\r\n";
+            header += "Server:Web Server\r\n";
 
             header += "\r\n";
             outBuffer_ += header;
@@ -657,7 +654,7 @@ AnalysisState HttpData::analysisRequest()
         }
         header += "Content-Type: " + filetype + "\r\n";
         header += "Content-Length: " + to_string(sbuf.st_size) + "\r\n";
-        header += "Server: LinYa's Web Server\r\n";
+        header += "Server:Web Server\r\n";
         // 头部结束
         header += "\r\n";
         outBuffer_ += header;
